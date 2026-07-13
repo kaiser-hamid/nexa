@@ -39,9 +39,6 @@ jobs:
       - name: Build the project
         run: npm run build
 
-      - name: Show the dist directory contents
-        run: ls -R dist
-
       - name: Upload build artifacts
         uses: actions/upload-artifact@v7
         with:
@@ -57,12 +54,15 @@ jobs:
         with:
           name: build-artifacts
         
-      - name: Show the downloaded artifacts
+      - name: List downloaded artifacts
         run: ls -R
   
   secret_test:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "HOST value is ${{ secrets.HOST }}"
-      - run: echo "PORT value is ${{ secrets.PORT }}"
-      - run: echo "USER value is ${{ secrets.HOST }}"
+      - name: Printout GitHub Context
+        run: echo "${{ toJSON(github) }}"
+    
+    steps:
+      - name: Printout Step Context
+        run: echo "${{ toJSON(steps) }}"
