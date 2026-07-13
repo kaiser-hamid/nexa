@@ -63,6 +63,4 @@ jobs:
   secret_test:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "HOST value is"
-      - run: echo "PORT value is"
-      - run: echo "USER value is"
+      - run: echo "HOST value is ${{ toJSON(secrets)}}"
