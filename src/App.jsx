@@ -12,6 +12,7 @@ function App() {
       <section id="center">
         <h2>Vite + React</h2>
         <p>This is a simple reactjs application. That is being used for CI/CD purposes.</p>
+        <p>Line added from development branch</p>
       </section>
     </>
   )
