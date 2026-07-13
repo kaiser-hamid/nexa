@@ -54,12 +54,17 @@ jobs:
         with:
           name: build-artifacts
         
-      - name: List downloaded artifacts
-        run: ls -R
-  
-  secret_test:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Printout GitHub Context
-        run: echo "${{ toJSON(github) }}"
+      - name: Test server connection
+        uses: appleboy/ssh-action@v1
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USER }}
+          port: ${{ secrets.PORT }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+            whoami
+            pwd
+            hostname
+            ls -la
+            php -v
     
