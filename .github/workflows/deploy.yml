@@ -57,15 +57,12 @@ jobs:
           name: build-artifacts
         
       - name: Test server connection
-        uses: appleboy/ssh-action@v1
+        uses: appleboy/scp-action@v1
         with:
           host: ${{ secrets.HOST }}
-          username: ${{ secrets.USER }}
-          port: ${{ secrets.PORT }}
+          username: ${{ secrets.USE }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
-          script: |
-            whoami
-            pwd
-            hostname
-            php -v
+          port: ${{ secrets.PORT }}
+          source: ./*
+          target: ${{ secrets.DESTINATION }}
     
