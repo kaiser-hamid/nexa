@@ -63,6 +63,3 @@ jobs:
       - name: Printout GitHub Context
         run: echo "${{ toJSON(github) }}"
     
-    steps:
-      - name: Printout Step Context
-        run: echo "${{ steps }}"
