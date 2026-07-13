@@ -8,3 +8,7 @@ test('addition', () => {
 test('asset true', () => {
   expect(true).toBeTruthy();
 });
+
+test('asset false', () => {
+  expect(false).toBeFalsy();
+}); 
