@@ -56,11 +56,11 @@ jobs:
         with:
           name: build-artifacts
         
-      - name: Test server connection
+      - name: Deploying distribution files to server
         uses: appleboy/scp-action@v1
         with:
           host: ${{ secrets.HOST }}
-          username: ${{ secrets.USE }}
+          username: ${{ secrets.USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: ${{ secrets.PORT }}
           source: ./*
