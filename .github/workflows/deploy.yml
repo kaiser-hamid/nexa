@@ -63,6 +63,6 @@ jobs:
   secret_test:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "HOST value is: ${{ secrets.HOST }}"
-      - run: echo "PORT value is: ${{ secrets.PORT }}"
-      - run: echo "USER value is: ${{ secrets.USER }}"
+      - run: echo "HOST value is"
+      - run: echo "PORT value is"
+      - run: echo "USER value is"
