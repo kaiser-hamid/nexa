@@ -20,3 +20,21 @@ jobs:
       
       - name: Run tests
         run: npm test
+
+  building:
+    runs-on: ubuntu-latest
+    needs: testing
+    steps:
+      - name: Checkout project code
+        uses: actions/checkout@v7
+      
+      - name: Set up nodejs version
+        uses: actions/setup-node@v6
+        with:
+          node-version: 24
+      
+      - name: Install dependencies
+        run: npm install
+      
+      - name: Build the project
+        run: npm run build
